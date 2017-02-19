@@ -1,5 +1,7 @@
 package org.usfirst.frc.team5686.robot.commands;
 
+import org.usfirst.frc.team5686.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -9,6 +11,8 @@ public class ExtendGearMech extends Command {
 
     public ExtendGearMech() {
         // Use requires() here to declare subsystem dependencies
+    	requires(Robot.gear);
+    	setInterruptible(true);
         // eg. requires(chassis);
     }
 

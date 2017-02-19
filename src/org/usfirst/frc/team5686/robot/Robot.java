@@ -3,11 +3,12 @@
 
 package org.usfirst.frc.team5686.robot;
 
-import org.usfirst.frc.team5686.robot.commands.Autonomous;
-import org.usfirst.frc.team5686.robot.subsystems.Arm;
 import org.usfirst.frc.team5686.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team5686.robot.subsystems.IntakeWheels;
-import org.usfirst.frc.team5686.robot.subsystems.Scale;
+import org.usfirst.frc.team5686.robot.commands.Autonomous;
+import org.usfirst.frc.team5686.robot.subsystems.GearMech;
+import org.usfirst.frc.team5686.robot.subsystems.BeltMech;
+import org.usfirst.frc.team5686.robot.subsystems.ShooterMech;
+import org.usfirst.frc.team5686.robot.subsystems.IntakeMech;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -27,9 +28,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 	public static DriveTrain drivetrain;
-	public static Arm arm;
-	public static IntakeWheels intake;
-	public static Scale scale;
+	public static GearMech gear;
+	public static BeltMech belts;
+	public static ShooterMech shooter;
+	public static IntakeMech intake;
+	
 	
 	public static OI oi;
 	
@@ -44,9 +47,11 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		// instantiate subsystems
 		drivetrain = new DriveTrain();
-		arm = new Arm();
-		intake = new IntakeWheels();
-		scale = new Scale();
+		gear = new GearMech();
+		belts = new BeltMech();
+		shooter = new ShooterMech();
+		intake = new IntakeMech();
+		
 		
 		oi = new OI();
 		

@@ -1,5 +1,7 @@
 package org.usfirst.frc.team5686.robot.commands;
 
+import org.usfirst.frc.team5686.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -8,6 +10,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class linearActuatorOff extends Command {
 
     public linearActuatorOff() {
+    	requires(Robot.gear);
+    	setInterruptible(true);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
