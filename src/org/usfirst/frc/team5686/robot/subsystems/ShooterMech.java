@@ -2,13 +2,35 @@ package org.usfirst.frc.team5686.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+import org.usfirst.frc.team5686.robot.RobotMap;
+
+import com.ctre.CANTalon;
+
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+
 /**
  *
  */
 public class ShooterMech extends Subsystem {
-
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+	private static CANTalon shooter;
+	
+	private static final double SHOOTER_SPEED = 0.5;
+	
+	public ShooterMech() {
+		super ("ShooterMech");
+		shooter = new CANTalon(RobotMap.shooter);
+	}
+		
+	public void FireShooter() {
+		shooter.set(SHOOTER_SPEED);
+		
+	}
+	
+	public void StopShooter() {
+		shooter.set(0);
+	}
+    
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
