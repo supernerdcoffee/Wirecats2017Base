@@ -3,14 +3,10 @@
 
 package org.usfirst.frc.team5686.robot;
 
-import org.usfirst.frc.team5686.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team5686.robot.commands.Autonomous;
-import org.usfirst.frc.team5686.robot.subsystems.GearMech;
-import org.usfirst.frc.team5686.robot.subsystems.BeltMech;
-import org.usfirst.frc.team5686.robot.subsystems.ShooterMech;
-import org.usfirst.frc.team5686.robot.subsystems.IntakeMech;
+import org.usfirst.frc.team5686.robot.commands.*;
+import org.usfirst.frc.team5686.robot.subsystems.*;
 
-
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -29,10 +25,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static DriveTrain drivetrain;
 	public static GearMech gear;
-	public static BeltMech belts;
+	public static Feeder feeder;
 	public static ShooterMech shooter;
 	public static IntakeMech intake;
-	
+	public static Scale scale;
 	
 	public static OI oi;
 	
@@ -48,9 +44,10 @@ public class Robot extends IterativeRobot {
 		// instantiate subsystems
 		drivetrain = new DriveTrain();
 		gear = new GearMech();
-		belts = new BeltMech();
+		feeder = new Feeder();
 		shooter = new ShooterMech();
 		intake = new IntakeMech();
+		scale = new Scale();
 		
 		
 		oi = new OI();
@@ -63,8 +60,9 @@ public class Robot extends IterativeRobot {
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		// SmartDashboard.putData("Auto mode", chooser);
         
-		autonomousCommand=new Autonomous();
-        
+		//autonomousCommand=new Autonomous();
+		
+        CameraServer.getInstance().startAutomaticCapture();
 	}
 
 	/**

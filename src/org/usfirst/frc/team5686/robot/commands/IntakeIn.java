@@ -25,7 +25,7 @@ public class IntakeIn extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.intake.getBallSwitch();
+       return true;// TODO Fix for buttons
     }
 
     // Called once after isFinished returns true

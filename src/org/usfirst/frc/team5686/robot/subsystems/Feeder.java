@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class BeltMech extends Subsystem {
+public class Feeder extends Subsystem {
 	public static CANTalon belt;
 	
 	private static final double BELT_SPEED = 0.5 ;
 
-	public  BeltMech() {
-		super("BeltMech");
-		belt= new CANTalon(RobotMap.belt);
+	public  Feeder() {
+		super("Feeder");
+		belt= new CANTalon(RobotMap.feeder);
 	}
 	
 	public void beltsOn() {

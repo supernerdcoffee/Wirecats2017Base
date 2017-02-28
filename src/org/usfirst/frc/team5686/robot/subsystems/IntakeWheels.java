@@ -23,7 +23,7 @@ public class IntakeWheels extends Subsystem {
 		
 		intake = new CANTalon(RobotMap.intake);
 		
-		limit_switch = new DigitalInput(RobotMap.ball_switch);
+	//	limit_switch = new DigitalInput(RobotMap.ball_switch);
 	}
 	
 	public void initDefaultCommand() {

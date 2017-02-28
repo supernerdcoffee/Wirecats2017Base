@@ -28,6 +28,9 @@ public class IntakeMech extends Subsystem {
 	public void stop () {
 		intake.set(0);
 	}
+	public void intakeOut(){
+		intake.set(-INTAKE_SPEED);
+	}
     
 
     public void initDefaultCommand() {

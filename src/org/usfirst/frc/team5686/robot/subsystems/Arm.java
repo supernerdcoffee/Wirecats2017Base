@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5686.robot.subsystems;
 import org.usfirst.frc.team5686.robot.RobotMap;
-import org.usfirst.frc.team5686.robot.commands.RunArm;
+
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * The robot's arm
- */
+ 
 public class Arm extends Subsystem {
 	private static DigitalInput down;
 	private static DigitalInput up;
@@ -19,11 +19,11 @@ public class Arm extends Subsystem {
 	public Arm(){
 		super("Arm");
 		
-		arm_motor_a = new Talon(RobotMap.arm_a);
-		arm_motor_b = new Talon(RobotMap.arm_b);
-		
-		down = new DigitalInput(RobotMap.arm_down);
-		up = new DigitalInput(RobotMap.arm_up);
+	//	arm_motor_a = new Talon(RobotMap.arm_a);
+	//	arm_motor_b = new Talon(RobotMap.arm_b);
+	//	
+	//	down = new DigitalInput(RobotMap.arm_down);
+	//	up = new DigitalInput(RobotMap.arm_up);
 	}
 	
 	public void initDefaultCommand() {
@@ -59,3 +59,4 @@ public class Arm extends Subsystem {
 		set(0);
 	}
 }
+*/
