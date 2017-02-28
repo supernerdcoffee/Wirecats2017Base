@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ShooterMech extends Subsystem {
 	private static CANTalon shooter;
 	
-	private static final double SHOOTER_SPEED = 0.5;
+	private static final double SHOOTER_SPEED = 0.75;
 	
 	public ShooterMech() {
 		super ("ShooterMech");

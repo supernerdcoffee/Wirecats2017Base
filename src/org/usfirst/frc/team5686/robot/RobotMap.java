@@ -8,7 +8,7 @@ package org.usfirst.frc.team5686.robot;
  */
 public class RobotMap {
 	// drive train pwm ports
-	public static int rightFrontDrive = 0;
+	public static int rightFrontDrive = 9;
 	public static int rightRearDrive = 1;
 	public static int leftFrontDrive = 2;
 	public static int leftRearDrive = 3;

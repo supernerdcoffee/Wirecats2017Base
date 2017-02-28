@@ -10,21 +10,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Feeder extends Subsystem {
-	public static CANTalon belt;
+	public static CANTalon feeder;
 	
-	private static final double BELT_SPEED = 0.5 ;
+	private static final double FEEDER_SPEED = 0.5 ;
 
 	public  Feeder() {
 		super("Feeder");
-		belt= new CANTalon(RobotMap.feeder);
+		feeder= new CANTalon(RobotMap.feeder);
 	}
 	
-	public void beltsOn() {
-		belt.set(BELT_SPEED);
+	public void feederOn() {
+		feeder.set(FEEDER_SPEED);
 	}
 	
 	public void stop () {
-		belt.set(0);
+		feeder.set(0);
 	}
    
 

@@ -1,16 +1,10 @@
 package org.usfirst.frc.team5686.robot;
 
-import org.usfirst.frc.team5686.robot.commands.ArcadeDrive;
-import org.usfirst.frc.team5686.robot.commands.DownScale;
-import org.usfirst.frc.team5686.robot.commands.IntakeCancel;
-import org.usfirst.frc.team5686.robot.commands.IntakeIn;
-import org.usfirst.frc.team5686.robot.commands.IntakeOut;
-import org.usfirst.frc.team5686.robot.commands.RunScale;
-import org.usfirst.frc.team5686.robot.commands.SlowDrive;
-import org.usfirst.frc.team5686.robot.commands.TankDrive;
+
 import org.usfirst.frc.team5686.robot.subsystems.Scale;
 import org.usfirst.frc.team5686.robot.triggers.IntakeInPOV;
 import org.usfirst.frc.team5686.robot.triggers.IntakeOutPOV;
+import org.usfirst.frc.team5686.robot.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -50,8 +44,7 @@ public class OI {
 	
 	Trigger intakeIn;
 	Trigger intakeOut;
-	
-	JoystickButton cancelIntake;
+	Trigger cancelIntake;
 	
 	JoystickButton downScale;
 	JoystickButton startScale;
@@ -77,17 +70,26 @@ public class OI {
 		js3 = new Joystick(2);
 		
 		// set up buttons
-		cancelIntake = new JoystickButton(js3, 2);
-		cancelIntake.whenPressed(new IntakeCancel());
+		// 5 feeder 6 shooter
+		intakeIn = new JoystickButton(js3, 3);
+		intakeOut = new JoystickButton(js3, 4);
 		
-		downScale = new JoystickButton(js3,1);
-		downScale.toggleWhenActive(new DownScale());
+		
+		cancelIntake = new JoystickButton(js3, 2);
+		cancelIntake.whenActive(new IntakeCancel());
+		
+		
+		
+		////downScale = new JoystickButton(js3,1);
+		//downScale.toggleWhenActive(new DownScale());
+		
+		
 
 		startScale = new JoystickButton(js3,4);
 		startScale.toggleWhenActive(new RunScale());
 		
-		arcadeDrive = new JoystickButton(js1, 8);
-		arcadeDrive2 = new JoystickButton(js2, 8);
+		//arcadeDrive = new JoystickButton(js1, 8);
+		//arcadeDrive2 = new JoystickButton(js2, 8);
 		
 		tankDrive = new JoystickButton(js1, 9);
 		tankDrive2 = new JoystickButton(js2, 9);
@@ -99,8 +101,8 @@ public class OI {
 		
 		
 		// toggles because when this command is toggled off it defaults to tank
-		arcadeDrive.whenPressed(new ArcadeDrive());
-		arcadeDrive2.whenPressed(new ArcadeDrive());
+		//arcadeDrive.whenPressed(new ArcadeDrive());
+		//arcadeDrive2.whenPressed(new ArcadeDrive());
 		
 		tankDrive.whenPressed(new TankDrive());
 		tankDrive2.whenPressed(new TankDrive());
@@ -118,6 +120,8 @@ public class OI {
 
 		intakeOut = new IntakeOutPOV();
 		intakeOut.whenActive(new IntakeOut());
+		cancelIntake.whenActive(new IntakeOff ());
+		
 	}
 	
 	public Joystick getLeft(){
